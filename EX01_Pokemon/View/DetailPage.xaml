@@ -24,7 +24,7 @@
         </Grid.RowDefinitions>
 
         <!--Background image based on type-->
-        <Image Source="http://i.imgur.com/tJDTJwX.png" Stretch="UniformToFill" 
+        <Image Source="/Resources/Bg/fire.jpg" Stretch="UniformToFill" 
                Grid.Row="1" Grid.RowSpan="4"/>
         <Grid Grid.Row="3" Grid.RowSpan="2" Background="White" Margin="23,0,23,-0.4" Height="285" VerticalAlignment="Bottom">
             <Grid.Resources>
@@ -45,7 +45,7 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <!--Name of the pokemon-->
-            <TextBlock Text="Marowak" FontSize="35" 
+            <TextBlock Text="{Binding Pokemon.Name}" FontSize="35" 
                        VerticalAlignment="Bottom" Grid.ColumnSpan="3" />
             <Rectangle Height="3" Margin="-100,10" VerticalAlignment="Top" 
                        Grid.Row="1" Grid.Column="1" Fill="#90ee90" />
@@ -56,7 +56,7 @@
                        Fill="#555" Width="1" Margin="0,30,0,50" Grid.Column="1"/>
 
             <!--Actual type of the pokemon-->
-            <TextBlock Text="Ground" FontSize="21" Grid.Row="2" VerticalAlignment="Center" />
+            <TextBlock Text="{Binding Pokemon.Type}" FontSize="21" Grid.Row="2" VerticalAlignment="Center" />
 
             <!--(fixed text, no binding)-->
             <TextBlock Text="Type" FontSize="13" Grid.Row="3" VerticalAlignment="Top"/>
@@ -64,7 +64,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <!--Actual weight of the pokemon-->
-                <TextBlock Text="xx"  FontSize="21" />
+                <TextBlock Text="{Binding Pokemon.Weight}"  FontSize="21" />
                 <TextBlock Text=" kg" FontSize="21" />
             </StackPanel>
 
@@ -74,7 +74,7 @@
 
             <StackPanel Orientation="Horizontal" Grid.Column="2" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
                 <!--Actual size of the pokemon-->
-                <TextBlock Text="xx"  FontSize="21" />
+                <TextBlock Text="{Binding Pokemon.Height}"  FontSize="21" />
                 <TextBlock Text=" cm" FontSize="21" />
             </StackPanel>
 
@@ -87,6 +87,6 @@
         <!--Image of pokemon creature-->
         <Image Grid.Row="2" Grid.RowSpan="2" 
                Margin="0,0,0,10" VerticalAlignment="Bottom"               
-               Source="http://static.pokemonpets.com/images/monsters-images-800-800/4-Charmander.png"/>
+               Source="http://static.pokemonpets.com/images/monsters-images-800-800/136-Flareon.png"/>
     </Grid>
 </Page>
