@@ -9,6 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Bg\fire.jpg" />
+    <None Remove="Resources\Bg\ground.jpg" />
+    <None Remove="Resources\Bg\normal.jpg" />
+    <None Remove="Resources\Bg\poison.jpg" />
+    <None Remove="Resources\Bg\water.jpg" />
+    <None Remove="Resources\Data\pokemons.json" />
+    <None Remove="Resources\Icons\fire.png" />
+    <None Remove="Resources\Icons\ground.png" />
+    <None Remove="Resources\Icons\normal.png" />
+    <None Remove="Resources\Icons\poison.png" />
+    <None Remove="Resources\Icons\water.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Data\pokemons.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="ViewModel\" />
     <Folder Include="View\" />
@@ -17,6 +35,19 @@
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Bg\fire.jpg" />
+    <Resource Include="Resources\Bg\ground.jpg" />
+    <Resource Include="Resources\Bg\normal.jpg" />
+    <Resource Include="Resources\Bg\poison.jpg" />
+    <Resource Include="Resources\Bg\water.jpg" />
+    <Resource Include="Resources\Icons\fire.png" />
+    <Resource Include="Resources\Icons\ground.png" />
+    <Resource Include="Resources\Icons\normal.png" />
+    <Resource Include="Resources\Icons\poison.png" />
+    <Resource Include="Resources\Icons\water.png" />
   </ItemGroup>
 
 </Project>
