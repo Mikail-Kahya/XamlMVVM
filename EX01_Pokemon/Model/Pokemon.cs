@@ -15,6 +15,5 @@ namespace EX01_Pokemon.Model
         public int Height { get; set; }
 
         public string ImageUrl => $"{Id}-{Name}";
-        public string BgUrl => $"/Resources/Bg/{Type}.jpg";
     }
 }
