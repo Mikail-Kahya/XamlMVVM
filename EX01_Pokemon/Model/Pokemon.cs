@@ -14,7 +14,7 @@ namespace EX01_Pokemon.Model
         public int Weight { get; set; }
         public int Height { get; set; }
 
-        public string ImageUrl => $"http://static.pokemonpets.com/images/monsters-images-800-800/{Id}-{Name}.png";
+        public string ImageUrl => $"{Id}-{Name}";
         public string BgUrl => $"/Resources/Bg/{Type}.jpg";
     }
 }

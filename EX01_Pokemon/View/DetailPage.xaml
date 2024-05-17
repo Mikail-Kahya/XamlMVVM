@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:EX01_Pokemon.View"
       xmlns:vm="clr-namespace:EX01_Pokemon.ViewModel"
+      xmlns:convert="clr-namespace:EX01_Pokemon.View.Converters"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DetailPage">
@@ -14,6 +15,10 @@
         <vm:DetailPageVM/>
     </Page.DataContext>
 
+    <Page.Resources>
+        <convert:TypeToImageConverter x:Key="TypeUrl"/>
+        <convert:UrlToImageConverter x:Key="PokemonUrl"/>
+    </Page.Resources>
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -24,7 +29,7 @@
         </Grid.RowDefinitions>
 
         <!--Background image based on type-->
-        <Image Source="/Resources/Bg/fire.jpg" Stretch="UniformToFill" 
+        <Image Source="{Binding Pokemon.Type, Converter={StaticResource TypeUrl}, FallbackValue=/Resources/Bg/fire.jpg}" Stretch="UniformToFill" 
                Grid.Row="1" Grid.RowSpan="4"/>
         <Grid Grid.Row="3" Grid.RowSpan="2" Background="White" Margin="23,0,23,-0.4" Height="285" VerticalAlignment="Bottom">
             <Grid.Resources>
@@ -87,6 +92,6 @@
         <!--Image of pokemon creature-->
         <Image Grid.Row="2" Grid.RowSpan="2" 
                Margin="0,0,0,10" VerticalAlignment="Bottom"               
-               Source="http://static.pokemonpets.com/images/monsters-images-800-800/136-Flareon.png"/>
+               Source="{Binding Pokemon.ImageUrl, Converter={StaticResource PokemonUrl}, FallbackValue=http://static.pokemonpets.com/images/monsters-images-800-800/136-Flareon.png}"/>
     </Grid>
 </Page>
