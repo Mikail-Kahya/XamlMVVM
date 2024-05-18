@@ -5,8 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EX01_Pokemon"
         xmlns:view="clr-namespace:EX01_Pokemon.View"
+        xmlns:vm="clr-namespace:EX01_Pokemon.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
         Background="#333">
-    <view:OverViewPage></view:OverViewPage>
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Frame NavigationUIVisibility="Hidden" Content="{Binding CurrentPage}"/>
+        <Button VerticalAlignment="Bottom"
+                Command="{Binding SwitchPageCommand}"
+                Content="{Binding CommandText}"/>
+    </Grid>
 </Window>

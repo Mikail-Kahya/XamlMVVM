@@ -10,7 +10,7 @@ namespace EX01_Pokemon.ViewModel
 {
     internal class DetailPageVM : ObservableObject
     {
-        public Pokemon Pokemon { get; set; } = new Pokemon()
+        private Pokemon _pokemon = new Pokemon()
         {
             Id = 136,
             Name = "Flareon",
@@ -18,5 +18,15 @@ namespace EX01_Pokemon.ViewModel
             Height = 136,
             Weight = 9
         };
+
+        public Pokemon Pokemon
+        {
+            get => _pokemon;
+            set
+            {
+                _pokemon = value;
+                OnPropertyChanged(nameof(Pokemon));
+            }
+        }
     }
 }
