@@ -23,10 +23,12 @@
             <RowDefinition />
         </Grid.RowDefinitions>
         <!-- combobox for types -->
-        <ComboBox ItemsSource="{Binding PokemonTypes}"/>
+        <ComboBox ItemsSource="{Binding PokemonTypes}"
+                  SelectedItem="{Binding SelectedType}"/>
         <!-- listbox for (filtered?) pokemons -->
         <ListBox Grid.Row="1" Foreground="White" Background="Transparent"
-                 ItemsSource="{Binding Pokemon}">
+                 ItemsSource="{Binding Pokemon}"
+                 SelectedItem="{Binding SelectedPokemon}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
