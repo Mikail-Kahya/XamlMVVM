@@ -53,6 +53,10 @@ namespace EX01_Pokemon.ViewModel
 
                 CurrentPage = PokePage;
             }
+            else
+            {
+                CurrentPage = MainPage;
+            }
         }
     }
 }
