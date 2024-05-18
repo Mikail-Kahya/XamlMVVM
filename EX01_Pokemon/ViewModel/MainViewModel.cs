@@ -14,7 +14,18 @@ namespace EX01_Pokemon.ViewModel
     internal class MainViewModel : ObservableObject
     {
         private Page _currentPage = new OverViewPage();
-        public string CommandText => "navigate";
+        private string _commandText = "SHOW DETAILS";
+
+        public string CommandText
+        {
+            get => _commandText;
+            set
+            {
+                _commandText = value;
+                OnPropertyChanged(nameof(CommandText));
+            }
+        }
+
         public OverViewPage MainPage { get; private set; } = new OverViewPage();
         public DetailPage PokePage { get; private set; } = new DetailPage();
 
@@ -52,10 +63,12 @@ namespace EX01_Pokemon.ViewModel
                 detailVM.Pokemon = selectedPokemon;
 
                 CurrentPage = PokePage;
+                CommandText = "GO BACK";
             }
             else
             {
                 CurrentPage = MainPage;
+                CommandText = "SHOW DETAILS";
             }
         }
     }
